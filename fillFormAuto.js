@@ -31,8 +31,12 @@ const puppeteer = require('puppeteer');
 
       
         // Task 5: Wait for the thank-you page to load and write to console
-       // to be continued
-       
+        try {
+            await page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 10000 }); // Wait for navigation (10 seconds timeout)
+            console.log('Thank-you page has loaded successfully!');
+        } catch (navigationError) {
+            console.error('Failed to load the Thank-you page:', navigationError.message);
+        }
 
 
     } catch (error) {
