@@ -35,7 +35,7 @@ const puppeteer = require('puppeteer');
             await page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 10000 }); // Wait for navigation (10 seconds timeout)
             console.log('Thank-you page has loaded successfully!');
         } catch (navigationError) {
-            console.error('Failed to load the Thank-you page:', navigationError.message);
+            console.error('Failed to load the Thank-you page in less than 10 seconds', navigationError.message);
         }
 
 
